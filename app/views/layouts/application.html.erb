@@ -5,13 +5,27 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
+<div class="header">
+  <h1>
+    <%= image_tag "Fist.png", size: "100" %>
+    <%= link_to "RANKER", root_path %>
+  </h1>
+</div>
 
-<h1><%= link_to "RANKER", root_path %></h1>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <%= yield %>
+    </div>
+  </div>
+</div>
 
 
-<%= yield %>
+
+
 
 </body>
 </html>

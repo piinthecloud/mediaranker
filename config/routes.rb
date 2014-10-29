@@ -10,6 +10,10 @@ get "/albums/index",  to: "albums#index", as: :albums_index
 
 get "/books/index",   to: "books#index", as: :books_index
 
+get "/movies/:id",    to: "movies#show", as: :movies_show
+
+post "movies/:id",    to: "movies#upvote", as: :movies_upvote
+
   ###########################################################################
 
   # The priority is based upon order of creation: first created -> highest priority.
