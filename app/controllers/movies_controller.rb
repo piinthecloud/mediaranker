@@ -11,25 +11,34 @@ class MoviesController < ApplicationController
 
   def show
     @movie = Movie.find(params[:id])
-
   end
 
   def edit
-
+    @movie = Movie.find(params[:id])
   end
 
   def update
+    @movie = Movie.find(params[:id])
+    if @movie.update(movie_params)
+      redirect_to movies_index_path
+    else
+      render :edit
+    end
 
   end
+
 
   def create
     @movie = Movie.new(movie_params)
+
   end
 
   def destroy
-
+    @movie = Movie.find(params[:id])
+    if @movie.destroy
+      redirect_to movies_index_path
+    end
   end
-
 
 
   def upvote
@@ -42,9 +51,6 @@ class MoviesController < ApplicationController
     @movie.save
     redirect_to movies_index_path
   end
-
-
-
 
 
   private

@@ -1,14 +1,30 @@
 
 
 
-<div class="col1 col-lg-4">
+<div class="col1 col-sm-4">
   <h2 class="test"><%= link_to "Movies", movies_index_path %></h2>
+    <% @movies.each do |movie|%>
+       <h3><%= link_to(movie.name, movies_show_path(movie.id))  %>
+          <%= movie.votes %></h3>
+    <% end %>
+    <%= link_to("See all movies", movies_index_path) %>
+
 </div>
 
-<div class="col2 col-lg-4">
+<div class="col2 col-sm-4">
   <h2 class="test"><%= link_to "Albums", albums_index_path %></h2>
+    <% @albums.each do |a|%>
+       <h3><%= link_to(a.name, albums_show_path(a.id))  %>
+          <%= a.votes %></h3>
+    <% end %>
+    <%= link_to("See all albums", albums_index_path) %>
 </div>
 
-<div class="col3 col-lg-4">
+<div class="col3 col-sm-4">
   <h2 class="test"><%= link_to "Books", books_index_path %></h2>
+  <% @books.each do |b|%>
+     <h3><%= link_to(b.name, books_show_path(b.id))  %>
+        <%= b.votes %></h3>
+  <% end %>
+  <%= link_to("See all books", books_index_path) %>
 </div>

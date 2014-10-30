@@ -1,20 +1,74 @@
 Rails.application.routes.draw do
 
+get    "/albums/index",     to: "albums#index",   as: :albums_index
+
+post   "albums/:id",        to: "albums#upvote",  as: :albums_upvote
+
+post   "/albums",           to: "albums#create"
 
 
-root "media_ranker#index"
+get    "/albums/:id",       to: "albums#show",    as: :albums_show
+get    "/albums/:id",       to: "albums#show",    as: :album
 
-get "/movies/index",  to: "movies#index", as: :movies_index
+put    "/albums/:id",       to: "albums#update"
+patch  "/albums/:id",       to: "albums#update"
 
-get "/albums/index",  to: "albums#index", as: :albums_index
 
-get "/books/index",   to: "books#index", as: :books_index
+get    "/albums/:id/edit",  to: "albums#edit",    as: :edit_album
+post   "/albums/:id/edit",  to: "albums#edit"
 
-get "/movies/:id",    to: "movies#show", as: :movies_show
 
-post "movies/:id",    to: "movies#upvote", as: :movies_upvote
+delete "/albums/:id",       to: "albums#destroy", as: :delete_album
 
-  ###########################################################################
+###########################################################################
+
+get    "/books/index",     to: "books#index",   as: :books_index
+
+post   "books/:id",        to: "books#upvote",  as: :books_upvote
+
+post   "/books",           to: "books#create"
+
+
+get    "/books/:id",       to: "books#show",    as: :books_show
+get    "/books/:id",       to: "books#show",    as: :book
+
+put    "/books/:id",       to: "books#update"
+patch  "/books/:id",       to: "books#update"
+
+
+get    "/books/:id/edit",  to: "books#edit",    as: :edit_book
+post   "/books/:id/edit",  to: "books#edit"
+
+
+delete "/books/:id",       to: "books#destroy", as: :delete_book
+
+###########################################################################
+
+get    "/movies/index",     to: "movies#index",   as: :movies_index
+
+
+post   "movies/:id",        to: "movies#upvote",  as: :movies_upvote
+
+post   "/movies",           to: "movies#create"
+
+
+get    "/movies/:id",       to: "movies#show",    as: :movies_show
+get    "/movies/:id",       to: "movies#show",    as: :movie
+
+put    "/movies/:id",       to: "movies#update"
+patch  "/movies/:id",       to: "movies#update"
+
+
+get    "/movies/:id/edit",  to: "movies#edit",    as: :edit_movie
+post   "/movies/:id/edit",  to: "movies#edit"
+
+
+delete "/movies/:id",       to: "movies#destroy", as: :delete_movie
+
+###########################################################################
+
+root to: "media_ranker#index"
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,2 +1,15 @@
-<h1>Movies#edit</h1>
-<p>Find me in app/views/movies/edit.html.erb</p>
+<h1>Edit <%= @movie.name %></h1>
+
+
+
+
+
+<%= bootstrap_form_for @movie do |f| %>
+  <%= f.text_field :name, label: "Title" %>
+
+  <%= f.text_area :creator, label: "Director" %>
+
+  <%= f.text_area :description, label: "Description" %>
+
+  <%= f.submit %>
+<% end %>

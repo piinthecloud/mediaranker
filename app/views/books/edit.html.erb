@@ -1,2 +1,12 @@
-<h1>Books#edit</h1>
-<p>Find me in app/views/books/edit.html.erb</p>
+<h1>Edit <%= @book.name %></h1>
+
+
+<%= bootstrap_form_for @book do |f| %>
+  <%= f.text_field :name, label: "Title" %>
+
+  <%= f.text_area :creator, label: "Author" %>
+
+  <%= f.text_area :description, label: "Description" %>
+
+  <%= f.submit %>
+<% end %>

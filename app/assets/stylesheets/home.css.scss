@@ -13,7 +13,7 @@ html {
 
 .col {
   margin-top: 20px;
-  margin-left: 200px;
+  display: center;
 }
 
 .header {
@@ -32,4 +32,11 @@ html {
 
 .test a{
   color: black;
+}
+
+
+.buttons-show input{
+  margin-right: 5px;
+  position: relative;
+  float: left;
 }

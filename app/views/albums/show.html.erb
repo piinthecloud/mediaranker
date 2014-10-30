@@ -1,2 +1,6 @@
-<h1>Albums#show</h1>
-<p>Find me in app/views/albums/show.html.erb</p>
+<h1><%= @album.name %></h1>
+<h4> <%= @album.creator %> </h4>
+
+<p><%= @album.description %></p>
+
+<%= button_to "Edit", "/albums/#{@album.id}/edit", {class: 'btn btn-info'} %>
