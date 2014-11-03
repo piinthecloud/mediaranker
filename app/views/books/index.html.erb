@@ -16,13 +16,15 @@
   <tr>
 
     <td><%= book.votes %></td>
-    <td><%= link_to(book.name, books_show_path(book.id))  %></td>
+    <td><%= link_to(book.name, book_path(book.id))  %></td>
     <td><%= book.creator %></td>
     <td><%= book.description %></td>
-    <td><%= button_to "upvote", books_upvote_path(book.id), {class: 'btn btn-info'} %></td>
+    <td><%= button_to "upvote", book_path(book.id), {class: 'btn btn-info'} %></td>
 
   </tr>
 
   <% end %>
 
 </table>
+
+<%= link_to "New Book", new_book_path, class: 'btn btn-success' %>

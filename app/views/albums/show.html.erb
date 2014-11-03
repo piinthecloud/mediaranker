@@ -3,4 +3,12 @@
 
 <p><%= @album.description %></p>
 
-<%= button_to "Edit", "/albums/#{@album.id}/edit", {class: 'btn btn-info'} %>
+<h6> <%= @album.votes %></h6>
+<div class="buttons-above"><%= button_to "upvote", album_path(@album.id), {class: 'btn btn-info'} %></div>
+
+<div class="buttons-show">
+  <%= button_to "Edit", "/albums/#{@album.id}/edit", {class: 'btn btn-info'} %>
+  <%= button_to "Delete", album_path, method: :delete, class: 'btn btn-danger' %>
+  <%= link_to "All Albums", albums_index_path, class: 'btn btn-default' %>
+  <%= link_to "View All Media", root_path, class: 'btn btn-default' %>
+</div>

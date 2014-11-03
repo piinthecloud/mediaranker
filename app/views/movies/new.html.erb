@@ -1,2 +1,12 @@
-<h1>Movies#new</h1>
-<p>Find me in app/views/movies/new.html.erb</p>
+<h1>Movies</h1>
+
+<%= bootstrap_form_for @movie do |f| %>
+  <%= f.text_field :name, label: "Title" %>
+
+  <%= f.text_area :creator, label: "Director" %>
+
+  <%= f.text_area :description, label: "Description" %>
+
+  <%= f.submit %>
+
+<% end %>

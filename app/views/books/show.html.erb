@@ -3,4 +3,13 @@
 
 <p><%= @book.description %></p>
 
-<%= button_to "Edit", "/books/#{@book.id}/edit", {class: 'btn btn-info'} %>
+<h6> <%= @book.votes %></h6>
+<div class="buttons-above"><%= button_to "upvote", book_path(@book.id), {class: 'btn btn-info'} %></div>
+
+<div class="buttons-show">
+  <%= button_to "Edit", "/books/#{@book.id}/edit", {class: 'btn btn-info'} %>
+  <%= button_to "Delete", book_path, method: :delete, class: 'btn btn-danger' %>
+  <%= link_to "All Books", books_index_path, class: 'btn btn-default' %>
+  <%= link_to "View All Media", root_path, class: 'btn btn-default' %>
+
+</div>
